@@ -1,6 +1,8 @@
+import math
 from selenium import webdriver
 
-link = "http://suninjuly.github.io/simple_form_find_task.html"
+
+link = "http://suninjuly.github.io/find_xpath_form"
 browser = webdriver.Chrome()
 browser.get(link)
 
@@ -12,5 +14,6 @@ input3 = browser.find_element_by_class_name("city")
 input3.send_keys("Smolensk")
 input4 = browser.find_element_by_id("country")
 input4.send_keys("Russia")
-button = browser.find_element_by_css_selector("button.btn")
+button = browser.find_element_by_xpath("//button[contains(text(), 'Отправить')]")
 button.click()
+
