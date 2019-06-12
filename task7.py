@@ -1,5 +1,5 @@
-import math
 from selenium import webdriver
+import math
 
 
 def calc(x):
@@ -7,12 +7,15 @@ def calc(x):
 
 
 browser = webdriver.Chrome()
-browser.get("http://suninjuly.github.io/get_attribute.html")
-x = browser.find_element_by_id("treasure").get_attribute("valuex")
+browser.get("http://suninjuly.github.io/alert_accept.html")
+
+browser.find_element_by_tag_name("button").click()
+browser.switch_to.alert.accept()
+
+
+x = int(browser.find_element_by_id("input_value").text)
 
 y = calc(x)
 
 browser.find_element_by_id("answer").send_keys(y)
-browser.find_element_by_id("robotCheckbox").click()
-browser.find_element_by_id("robotsRule").click()
 browser.find_element_by_css_selector("button.btn").click()
